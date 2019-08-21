@@ -43,33 +43,7 @@ function cioos_customize_logo() {
    }
 }
 
-function cioos_customize_css() {
-   ?>
-      <style type="text/css">
-         .accent_color_background {
-            background-color: <?php echo get_theme_mod('accent_color', 'rgb(128,128,128)') ?>;
-         }
-         #pre-header {
-            background-color: <?php echo get_theme_mod('accent_color', 'rgb(128,128,128)') ?>;
-         }
-
-         .mega-menu-toggle {
-            background-color: <?php echo get_theme_mod('accent_color', 'rgb(128,128,128)') ?>!important;
-         }
-
-         #footer {
-            background-color: <?php echo get_theme_mod('accent_color', 'rgb(128,128,128)') ?>!important;
-         }
-
-         .mega-menu-wrap {
-            background-color: <?php echo get_theme_mod('accent_color', 'rgb(128,128,128)') ?>!important;
-         }
-      </style>
-   <?php
-}
-
 add_action( 'wp_enqueue_scripts', 'enqueue_parent_styles' );
 add_action( 'customize_register', 'cioos_customize_register');
-add_action( 'wp_head', 'cioos_customize_css' );
 add_action( 'wp_head', 'cioos_customize_logo' );
 ?>
