@@ -20,16 +20,7 @@ Text Domain: CIOOS
 }
 
 #pre-header {
-	background-color: #006e90;
-}
-
-#site-header {
-    position: relative;
-    z-index: 9999;
-}
-
-#mega-menu-wrap-pre_header_menu {
-    background: #006e90 !important;
+	background-color: grey;
 }
 
 .elementor-column-gap-default>.elementor-row>.full-section-image>.elementor-element-populated {
@@ -42,24 +33,20 @@ Text Domain: CIOOS
 	padding:10px;
 }
 #header .menu > li.current-menu-item > a span{
-	color: #ffc857;
+	color: #021F30;
 	font-weight: bold;
 }
-#header .menu > li.current-menu-item > a :hover,
-#header .menu > li.current-menu-item > a :active,
-#header .menu > li.current-menu-item > a :focus{
-	color: #b9d6f2!important;
-
+#header .menu > li.current-menu-item > a :hover{
+	color: #bebebe!important;
 	
 }
 
 #header .menu > li > a span:hover{
-	color: #006e90!important;
-	text-decoration: none!important;
+	color: grey!important;
 }
 
 #header .menu > li.current-menu-item > a span:after{
-    background: #b9d6f2;
+    background: #bebebe;
 	  width: 100%;
 
 }
@@ -69,17 +56,13 @@ Text Domain: CIOOS
     display: block;
     width: 0;
     height: 2px;
-    background: #006e90;
+    background: grey;
     transition: width .5s;
 }
 
 
 #header .menu > li > a span:hover::after {
     width: 100%;
-}
-
-#header .header-links > ul > li a {
-    text-decoration: none !important;
 }
 
 /***About page***/
@@ -99,16 +82,19 @@ Text Domain: CIOOS
 
 .option13 {
 	max-width: 1400px!important;
-	/*max-width: 1240px!important;*/
 	text-align: center;
+}
+
+#footer-core h3 span {
+	color: white;
+}
+
+#footer-core, #footer-core a, #footer-core p {
+	color: white!important;
 }
 
 #footer-col1, #footer-col2 {
 	width: auto;
-}
-
-#sub-footer {
-	display:none;
 }
 
 @media screen and (min-width: 575px){
@@ -126,131 +112,37 @@ Text Domain: CIOOS
 	}	
 }
 
+@media only screen and (max-width: 685px) {
 
-/*****MailChimp********/
-#mc_embed_signup {
-	background-color: #006e90!important;
-}
+	#sidebar {
+		display: block !important;
+		width: 100% !important;
+	}
 
-#mc_embed_signup .mc-field-group.input-group label {
-	margin-right: 10px;
-	float: left;
-}
-
-.block_1, .block_2 {
-	float: left;
-}
-
-#mc_embed_signup .mc-field-group {
-	margin-right: 1em;
-}
-
-@media screen and (max-width: 380px) {
-	.block_1, .block_2 {
-		display: block!important;
+	div#content-core {
+		flex-direction: column;
 	}
 	
-	#mc_embed_signup .mc-field-group.input-group label{
-		float: none;
-		display: block!important;
-	}
-	
-	.subcribe_container {
-		display: block!important;
-		width: 20em!important;
-	}
-	
-	#mc_embed_signup .mc-field-group {
-		min-height: 30px!important;
-	}
-	
-	.subcribe_container {
-		margin-top: 4em!important;
+	.layout-sidebar-left #sidebar-core {
+		margin-right: 0;
 	}
 }
 
-@media screen and (max-width: 1308px){
-	#footer-col4 {
-		width: auto;
-	}
-}
+/*****Sidebar******/
 
-.mc-field-group {
-		width: auto!important;
-	}
+/*to use this, the content-core class needs to be in display: flex*/
+.layout-sidebar-left #main {
+	flex-grow: 1;
+	order: 2;
+  }
+  
+/*to use this, the content-core class needs to be in display: flex*/  
+.layout-sidebar-left #sidebar {
+	order: 1;
+	flex-shrink: 0;
+	min-width: 23em!important;
+  }
 
-#mc_embed_signup .mc-field-group input[type=email] {
-	border: 1px solid white;
-	padding: 5px 20px!important;
-}
-
-#mc_embed_signup .mc-field-group input::placeholder{
-	color: white;
-}
-
-#mc_embed_signup form {
-	padding: 0px!important;
-}
-
-#mc_embed_signup .button {
-	background-color: #FA7268!important;
-	text-transform: uppercase;
-	font-size: 12px!important;
-	height: 28px!important;
-	line-height: 28px!important;
-}
-
-#mc_embed_signup .mc-field-group.input-group ul {
-	padding: 0!important;
-}
-
-#mc_embed_signup .mc-field-group.input-group ul li {
-	padding: 0!important;
-}
-
-.mc-field-group .email {
-	float: left;
-}
-
-#mc_embed_signup .clear {
-	clear: none!important;
-	float: left;
-}
-
-.subcribe_container {
-	display: flex;
-	width: 28em;
-	margin-top: 1em;
-}
-
-.clearfix::after {
-	content:"";
-  display:table;
-  clear:both;
-}
-
-/*** custom checkboxes ***/
-
-input[type=checkbox] { display:none!important; } 
-/* to hide the checkbox itself */
-
-input[type=checkbox] + label:before {
-  font-family: FontAwesome;
-  display: inline-block;
-}
-
-input[type=checkbox] + label:before { content: "\f096"; } 
-/* unchecked icon */
-
-input[type=checkbox] + label:before { letter-spacing: 10px; } 
-/* space between checkbox and label */
-
-input[type=checkbox]:checked + label:before { content: "\f046"; } 
-/* checked icon */
-
-input[type=checkbox]:checked + label:before { letter-spacing: 5px; } /* allow space for check mark */
-
-/***Sidebar***/
 .bellows {
 	margin: 0;
 }
