@@ -43,7 +43,25 @@ function cioos_customize_logo() {
    }
 }
 
+/**
+ * Checks for the existance of a stylesheet named ra_custom.css, if found it 
+ * loads it with a lower priority than the parent and theme styles to be sure 
+ * and be last in the styling order to avoid being overridden.
+ */
+function cioos_custom_stylesheet() {
+   # custom CSS url for browser
+   $custom_css_url = get_stylesheet_directory_uri() . '/ra_custom.css';
+   
+   # used to check for existance of custom file
+   $custom_css_path = get_stylesheet_directory() . '/ra_custom.css';
+   if (file_exists($custom_css_path)) {
+      wp_enqueue_style( 'ra-custom-style', $custom_css_url, array('parent-style'));
+   }
+}
+
 add_action( 'wp_enqueue_scripts', 'enqueue_parent_styles' );
+add_action( 'wp_enqueue_scripts', 'cioos_custom_stylesheet', 50000);
 add_action( 'customize_register', 'cioos_customize_register');
 add_action( 'wp_head', 'cioos_customize_logo' );
+
 ?>
