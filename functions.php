@@ -3,6 +3,33 @@ function enqueue_parent_styles() {
    wp_enqueue_style( 'parent-style', get_template_directory_uri().'/style.css' );
 }
 
+//==================================================================================
+// Asset Map JS
+//==================================================================================
+
+ function assetmap_scripts() {
+     if( is_front_page() ){ 
+     // CSS
+       wp_enqueue_style( 'asset-style', get_stylesheet_directory_uri().'/cioos-siooc-assetmap/asset/css/asset.css' );
+       wp_enqueue_style( 'map-style', get_stylesheet_directory_uri().'/cioos-siooc-assetmap/asset/css/ol.css' );
+     
+     // SCRIPTS
+         wp_enqueue_script( 'map-build','https:/cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.3.0/build/ol.js', array('jquery'), '', false  );
+         wp_enqueue_script( 'i18', get_stylesheet_directory_uri() . '/cioos-siooc-assetmap/asset/js/asset_i18n.js', array('jquery'), '', false   );
+         wp_enqueue_script( 'assetckan', get_stylesheet_directory_uri() . '/cioos-siooc-assetmap/asset/js/asset_ckan.js', array('jquery'), '', false   );
+         wp_enqueue_script( 'assetgeneral', get_stylesheet_directory_uri() . '/cioos-siooc-assetmap/asset/js/asset.js', array('jquery'), '', false   );
+         wp_enqueue_script( 'assetui', get_stylesheet_directory_uri() . '/cioos-siooc-assetmap/asset/js/asset_ui.js', array('jquery'), '', false   );
+         wp_enqueue_script( 'assetol', get_stylesheet_directory_uri() . '/cioos-siooc-assetmap/asset/js/asset_ol.js', array('jquery'), '', true   );
+     }
+     
+ }
+
+ add_action( 'wp_enqueue_scripts', 'assetmap_scripts', 10);
+
+//==================================================================================
+// The Rest
+//==================================================================================
+
 function register_logo_config_for_locale( $wp_customize, $locale ) {
    $setting_id = 'logo_'.$locale;
    $control_id = 'cioos_logo_'.$locale;
