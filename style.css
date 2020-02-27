@@ -29,7 +29,7 @@ Text Domain: CIOOS
 
 /***Main Menu***/
 #header .menu > li > a span{
-	font-weight: 450;
+	font-weight: 400;
 	padding:10px;
 }
 #header .menu > li.current-menu-item > a span{
@@ -67,7 +67,7 @@ Text Domain: CIOOS
 
 /***About page***/
 
-#content-core {
+/*#content-core {
 	max-width: 1640px!important;
 }
 
@@ -76,15 +76,15 @@ Text Domain: CIOOS
 	.elementor-column.elementor-col-50, .elementor-column[data-col="50"] {
 		width: 80%!important;
 	}
-}
+}*/
 
 /*****footer*****/
 
-.option13 {
-	max-width: 1400px!important;
+/*.option13 {         
+	max-width: 1400px!important;   
 	text-align: center;
 }
-
+*/
 #footer-core h3 span {
 	color: white;
 }
@@ -97,16 +97,16 @@ Text Domain: CIOOS
 	width: auto;
 }
 
-@media screen and (min-width: 575px){
+/*@media screen and (min-width: 575px){
 	.one_half, .one_third, .two_third, .one_fourth, .three_fourth, .one_fifth, .two_fifth, .three_fifth, .four_fifth, .one_sixth, .five_sixth {
 		display: inline-block;
 		vertical-align: top;
 		float: none;
 	}
-}
+}*/
 
 
-@media screen and (min-width: 569px){
+/*@media screen and (min-width: 569px){
 	.widget-area {
 		text-align: left;
 	}	
@@ -126,7 +126,7 @@ Text Domain: CIOOS
 	.layout-sidebar-left #sidebar-core {
 		margin-right: 0;
 	}
-}
+}*/
 
 /*****Sidebar******/
 
