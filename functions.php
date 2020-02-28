@@ -114,6 +114,36 @@ function enqueue_css_styles(){
    wp_enqueue_style( 'css-style', "https://fonts.googleapis.com/css?family=Montserrat:400,450,500,700,900|Quicksand:400,700&display=swap");
 }
 
+// TODO: fix this implementation potentially, or find better solution. Breaks some CSS as implemented months ago.
+function enqueue_assetmap_styles(){
+   wp_enqueue_style( 'asset-style', "/wp-content/asset/css/asset.css");
+   wp_enqueue_style( 'openlayer-style', "/wp-content/asset/css/ol.css");
+   wp_enqueue_style( 'style-style', "/wp-content/asset/css/style.css");
+   wp_enqueue_style( 'css-style', "https://fonts.googleapis.com/css?family=Montserrat:400,700,900|Quicksand:400,700&display=swap");
+   wp_enqueue_style( 'bootstrap-style', "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css");
+   wp_register_script( 'openlayer', "https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.3.0/build/ol.js");
+   wp_enqueue_script( 'openlayer');
+   #<!--The line below is only needed for old environments like Internet Explorer and Android 4.x-->
+   wp_register_script( 'polyfill', "https://cdn.polyfill.io/v2/polyfill.min.js?features=requestAnimationFrame,Element.prototype.classList,URL");
+   wp_enqueue_script( 'polyfill');
+   wp_register_script( 'jquery-v341', "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js");
+   wp_enqueue_script( 'jquery-v341');
+   #wp_add_inline_script( 'jquery-v341', 'var jQuery3_4_1 = $.noConflict(true);' );
+   #wp_enqueue_script( 'plugin-javascript', plugins_url( 'js.js', __FILE__ ), array('jquery-v341') );
+   wp_register_script( 'bootstrap', "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js", array('jquery-v341'));
+   wp_enqueue_script( 'bootstrap');
+   wp_register_script( 'i18n', "/wp-content/asset/js/asset_i18n.js", array('jquery-v341'));
+   wp_enqueue_script( 'i18n');
+   wp_register_script( 'ckan', "/wp-content/asset/js/asset_ckan.js", array('jquery-v341'));
+   wp_enqueue_script( 'ckan');
+   wp_register_script( 'asset', "/wp-content/asset/js/asset.js", array('jquery-v341'));
+   wp_enqueue_script( 'asset');
+   wp_register_script( 'debug', "/wp-content/asset/js/debugging.js", array('jquery-v341'));
+   wp_enqueue_script( 'debug');
+}
+
+add_action( 'wp_enqueue_scripts', 'enqueue_assetmap_styles' );
+
 add_action( 'wp_enqueue_scripts', 'enqueue_css_styles' );
 
 ?>
