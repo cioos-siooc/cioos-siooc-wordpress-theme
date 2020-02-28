@@ -10,6 +10,7 @@ Text Domain: cioos atlantic
 */
 
 @import url("./style.css");
+@import url("./ra_common.css");
 
 /*  Bottom copied from imported sheet, compared diff on original style.css in the root directory (one above)
     TODO: remove this comment.
