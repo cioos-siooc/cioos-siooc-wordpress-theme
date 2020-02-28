@@ -65,6 +65,9 @@ ul#menu-main-menu-en > li > ul.sub-menu {
     #mega-menu-wrap-pre_header_menu {
         background: #e55162 !important;
     }
+    #mega-menu-wrap-pre_header_menu #mega-menu-pre_header_menu > li.mega-menu-item.mega-item-align-float-left.mega-hide-on-mobile {
+        float: none;
+    }
 }
 
 .themebutton, button, html input[type="button"], input[type="reset"], input[type="submit"], .themebutton2, .button.style2, .button.style3:hover, .button.style4:hover {
