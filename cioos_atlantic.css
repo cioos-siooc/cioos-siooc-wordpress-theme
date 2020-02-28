@@ -1,0 +1,528 @@
+/*
+Theme Name: CIOOS Atlantic 1.0
+Theme URL: http://cioosatlantic.ca/
+Description: CIOOS Atlantic Child Theme
+Author: CIOOS Atlantic
+Author URL: https://cioosatlantic.ca/
+Template: Experon_Pro
+Version: 1.0
+Text Domain: cioos atlantic
+*/
+
+@import url("./style.css");
+
+/*  Bottom copied from imported sheet, compared diff on original style.css in the root directory (one above)
+    @import url("./cioos-siooc-wordpress-theme_1_1/style.css");
+*/
+
+/* TODO: Add css to line up dropdown left justified with first letter of parent element. */
+#header .header-links > ul > li a {
+    padding: 50px 15px 5px 15px;
+}
+
+
+/* CIOOS Atlantic colours */
+/** Push menu onto new line **/
+/*#{$wrap} {
+	clear: both;
+}
+*/
+
+/*Background color for center of header */
+#pre-header {
+    background-color: #e55162;
+}
+
+/*Background color for outer edges of header */
+#wrap-safari {
+    background-color: #e55162;
+}
+
+/* Email field for MailChimp */
+#footer-core input[type=email] {
+    background: white !important;
+}
+
+/*Text color for 'Email Address' in MailChimp email field */
+#mc_embed_signup .mc-field-group input::placeholder{
+    color: grey !important;
+}
+
+/* Fixes Latest News when no event found */
+.elementor-widget-wrap>.elementor-element {
+    height: auto;
+}
+
+/* Fixes custom form subscribe signup button */
+#mc_embed_signup #mc-embedded-subscribe.button {
+    background-color: white !important;
+    color: grey !important;
+}
+
+/* Aligns left margin on dropdown submenus. */
+ul#menu-main-menu-en > li > ul.sub-menu {
+    padding-left: 0px !important;
+    margin-left: 15px !important
+}
+
+/* This hides the second caret from displaying under menus with dropdowns. */
+#header .menu > li > a span::after {
+    display: none;
+}
+/* Remove padding around span */
+#header #menu-main-menu-en > li > a span {
+    padding: 0px;
+}
+
+/* Override max mega menu colour */
+@media only screen and (min-width: 1px){
+    #mega-menu-wrap-pre_header_menu {
+        background: #e55162 !important;
+    }
+}
+
+
+.themebutton, button, html input[type="button"], input[type="reset"], input[type="submit"], .themebutton2, .button.style2, .button.style3:hover, .button.style4:hover {
+    -webkit-box-shadow: 0 0 0 4px rgba( 17, 81, 114, 0.2 ) !important;
+    -moz-box-shadow: 0 0 0 4px rgba( 17, 81, 114, 0.2 ) !important;
+    -ms-box-shadow: 0 0 0 4px rgba( 17, 81, 114, 0.2 ) !important;
+    -o-box-shadow: 0 0 0 4px rgba( 17, 81, 114, 0.2 ) !important;
+    box-shadow: 0 0 0 4px rgba( 17, 81, 114, 0.2 ) !important;
+}
+
+/* Set menu span hover colour */
+#header .menu > li > a span:hover{
+    color: #e55162 !important;
+}
+
+/* These are fixes when asset map CSS is thrown into the mix without any edits to integrate. */
+/*
+body {
+    padding: 0px !important;
+}
+
+a:focus, a:hover {
+    text-decoration: none !important;
+}
+
+#header .header-links > ul > li a, #header-sticky .header-links > ul > li a {
+    color: #0a0a0a !important;
+	font-family: Raleway, Helvetica, Arial !important;
+}
+.variable-options input[type=checkbox] + label:before {
+    content: none;
+}
+
+.variable-options input[type=checkbox]:checked + label:before {
+    content: none;
+}
+*/
+
+/*  copied from imported sheet
+    @import url("./cioos-siooc-wordpress-theme_1_1/style.css");
+*/
+
+/* CIOOS Atlantic Colours
+
+Primary: #e55162 // Dark: #7a3840;
+Secondary: #56dcbe
+Tertiary: #2fb8da
+
+*/
+
+/* Pre Header */
+#pre-header #mega-menu-wrap-pre_header_menu {
+    background: none !important;
+}
+#pre-header {
+    background: url("https://dev.cioosatlantic.ca/wp-content/uploads/background-colour.jpg") repeat-x center;
+}
+#mega-menu-wrap-pre_header_menu #mega-menu-pre_header_menu > li.mega-menu-item > a.mega-menu-link:hover,
+#mega-menu-wrap-pre_header_menu #mega-menu-pre_header_menu > li.mega-menu-item.mega-current-menu-item > a.mega-menu-link {
+    background: #10171d;
+    color: #e55162;
+}
+#mega-menu-wrap-pre_header_menu li.mega-menu-item img.mega-menu-logo {
+    vertical-align: bottom;
+}
+
+/* Header */
+#header { margin: 3em 0; }
+#header .header-links > ul > li a span {
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 15px;
+    color: #404041;
+}
+#header .header-links .sub-menu a {
+    font-size: 14px;
+    padding: 5px 10px;
+    font-family: 'Montserrat', sans-serif !important;
+}
+#header .header-links .menu li .sub-menu li:hover a {
+    color: #e55162 !important;
+}
+
+#header .menu > li.current-menu-item > a span {
+    font-weight: 400;
+    color: #e55162;
+}
+#header .menu > li.current-menu-item:hover > a span,
+#header .menu > li.current-menu-item > a span:hover {
+    color: #404041 !important;
+}
+
+/* Main Menu */
+header #header .menu > li > a {
+    margin-bottom: 10px;
+}
+
+/* Sidebar */
+#sidebar .bellows-nav li {
+    border-bottom: 1px solid #f0f0f2;
+}
+#sidebar .bellows-nav li:last-child {
+    border-bottom: none;
+}
+#sidebar .bellows-submenu {
+    background: #f0f0f2;
+}
+#sidebar .bellows-submenu a {
+    padding-left: 40px;
+    padding-bottom: 0;
+    padding-top: 20px;
+}
+#sidebar .bellows-submenu li:last-child a {
+    padding-bottom: 20px;
+}
+#sidebar .bellows-submenu li.bellows-current-menu-item {
+    font-weight: 700;
+}
+/* Scroll To Top */
+#scrollUp:after {
+    background: #2fb8da;
+    height: 30px;
+    width: 30px;
+    border-radius: 30px;
+    line-height: 30px;
+    font-size: 1em;
+}
+/* ***** ELEMENTOR ***** */
+
+/* Elementor Widgets */
+#content .elementor-widget-text-editor,
+#content .elementor-widget-image-box .elementor-image-box-content .elementor-image-box-description,
+#content .elementor-testimonial-details div {
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    color: #808081;
+    font-weight: 300;
+}
+#content .elementor-image-box-content .elementor-image-box-title {
+    font-family: "Montserrat", sans-serif;
+    font-size: 22px;
+    color: #404041;
+    font-weight: 300;
+}
+#content .elementor-testimonial-content {
+    font-family: "Montserrat", sans-serif;
+    color: #808081;
+    font-weight: 300;
+    letter-spacing: 0;
+    line-height: 1.5em;
+}
+#content .elementor-testimonial-details .elementor-testimonial-name {
+    font-weight: 700;
+    color: #404041;
+}
+#content .elementor-testimonial-details .elementor-testimonial-job {
+    font-size: 12px;
+    font-weight: 400;
+    color: #2fb8da;
+}
+
+/* Column - 50% */
+.elementor-col-50 {
+    width: 50% !important;
+}
+.elementor-element .elementor-row {
+    flex-direction: row !important;
+}
+
+/* Headings */
+#content h2.elementor-heading-title {
+    color: #404041;
+    font-size: 24px;
+    font-weight: 700;
+    font-family: "Montserrat", sans-serif;
+    letter-spacing: 0;
+}
+
+/* Carousel */
+.event-carousel-type1-head .mec-event-date-carousel {
+    background-color: #e55162;
+}
+.event-carousel-type1-head .mec-event-date-carousel::after {
+    border-color: #7a3840;
+}
+.mec-event-carousel-content .mec-event-carousel-title a {
+    font-size: 21px;
+    letter-spacing: 0;
+    font-weight: 300;
+}
+
+/* Sections */
+.light-content-box > div {
+    background: #f9fbfc !important;
+    border-color: #e55162 !important;
+}
+
+/* ***** HOME PAGE ***** */
+.asset-map-home {
+    margin-top: -5.5em;
+    margin-bottom: 5em;
+}
+.cioos-funding-info p {
+    font-size: 24px;
+    font-weight: 300;
+    font-family: "Montserrat", sans-serif;
+    line-height: 34px;
+    color: #808081;
+}
+.decorative-box,
+.decorative-box-with-text,
+.elementor-testimonial-content {
+    background: #f0f0f1;
+    padding: 2em;
+    border-radius: 5px;
+}
+.decorative-box p {
+    margin-bottom: 0;
+    padding: 1em;
+}
+.decorative-box-with-text p {
+    font-size: 21px;
+    line-height: 30px;
+    text-align: center;
+    padding: 1em;
+    margin-bottom: 0;
+}
+.elementor-testimonial-meta-inner {
+    margin-left: 2em;
+}
+
+/* Footer */
+footer {
+    background-color: #10171d;
+    background: url("https://dev.cioosatlantic.ca/wp-content/uploads/background-colour.jpg") repeat;
+}
+footer #footer {
+    background: none;
+}
+footer #sub-footer {
+    background:none;
+    color: #fff;
+}
+footer #sub-footer .copyright a {
+    color: #e55162;
+    background: #fff;
+    border-radius: 5px;
+    padding: 4px 10px 6px;
+    margin-left: 10px;
+    font-weight: 700;
+}
+footer #sub-footer .copyright a:hover {
+    background: #e55162;
+    color: #fff;
+}
+footer #footer #footer-core {
+    font-family: "Montserrat", sans-serif;
+}
+footer #footer #footer-core h3 {
+    margin-bottom: 10px;
+}
+footer #footer #footer-core h3 span {
+    font-weight: 700;
+    font-size: 16px;
+}
+footer #footer #footer-core,
+footer #footer #footer-core p,
+footer #footer #footer-core a {
+    font-size: 14px;
+    color: #dddddf !important;
+}
+
+/* MailChimp Subscribe Form */
+#mc_embed_signup,
+#footer input {
+    font-family: "Montserrat", sans-serif;
+    background: none;
+}
+#footer input {
+    box-shadow: none !important;
+
+}
+#footer #mc_embed_signup .mc-field-group > label {
+    color: #fff;
+    font-weight: 700;
+    margin-right: 30px;
+}
+#footer #mc_embed_signup .mc-field-group input[type=email] {
+    border: none;
+    padding: 5px !important;
+}
+#footer #mc_embed_signup #mc-embedded-subscribe.button {
+    /*height: 36px !important;*/
+    /*line-height: 36px !important;*/
+    height: 29px !important;
+    line-height: 29px !important;
+    color: #fff !important;
+    background: #e55162 !important;
+    font-weight: 700;
+    border: none !important;
+    font-size: 14px !important;
+}
+#footer #mc_embed_signup #mc-embedded-subscribe.button:hover {
+    color: #e55162 !important;
+    background: #fff !important;
+}
+
+/* TODO: Add css to line up dropdown left justified with first letter of parent element. */
+#header .header-links > ul > li a {
+    padding: 50px 15px 5px 15px;
+}
+
+
+/* CIOOS Atlantic colours */
+/** Push menu onto new line **/
+/*#{$wrap} {
+    clear: both;
+}
+*/
+
+/*Background color for center of header */
+
+#pre-header {
+    /*background-color: #e55162;*/
+    background-color: #10171d;
+}
+/*
+/*Background color for outer edges of header */
+
+#wrap-safari {
+    /*background-color: #e55162;*/
+    background-color: #10171d;
+}
+
+
+/* Email field for MailChimp */
+#footer-core input[type=email] {
+    background: white !important;
+}
+
+/*Text color for 'Email Address' in MailChimp email field */
+#mc_embed_signup .mc-field-group input::placeholder{
+    color: grey !important;
+}
+
+/* Fixes Latest News when no event found */
+.elementor-widget-wrap>.elementor-element {
+    height: auto;
+}
+
+/* Fixes custom form subscribe signup button */
+#mc_embed_signup #mc-embedded-subscribe.button {
+    background-color: white !important;
+    color: grey !important;
+}
+
+/* Aligns left margin on dropdown submenus. */
+ul.menu > li > ul.sub-menu {
+    padding-left: 0px !important;
+    margin-left: 15px !important
+}
+
+/* This hides the second caret from displaying under menus with dropdowns. */
+#header .menu > li > a span::after {
+    display: none;
+}
+/* Remove padding around span */
+#header .menu > li > a span {
+    padding: 0px !important;
+}
+
+/* Override max mega menu colour */
+@media only screen and (min-width: 1px){
+    #mega-menu-wrap-pre_header_menu {
+        background: #e55162 !important;
+    }
+}
+
+
+.themebutton, button, html input[type="button"], input[type="reset"], input[type="submit"], .themebutton2, .button.style2, .button.style3:hover, .button.style4:hover {
+    -webkit-box-shadow: 0 0 0 4px rgba( 17, 81, 114, 0.2 ) !important;
+    -moz-box-shadow: 0 0 0 4px rgba( 17, 81, 114, 0.2 ) !important;
+    -ms-box-shadow: 0 0 0 4px rgba( 17, 81, 114, 0.2 ) !important;
+    -o-box-shadow: 0 0 0 4px rgba( 17, 81, 114, 0.2 ) !important;
+    box-shadow: 0 0 0 4px rgba( 17, 81, 114, 0.2 ) !important;
+}
+
+/* Set menu span hover colour */
+#header .menu > li > a span:hover{
+    color: #e55162 !important;
+}
+
+/* These are fixes when asset map CSS is thrown into the mix without any edits to integrate. */
+/*
+body {
+    padding: 0px !important;
+}
+
+a:focus, a:hover {
+    text-decoration: none !important;
+}
+
+#header .header-links > ul > li a, #header-sticky .header-links > ul > li a {
+    color: #0a0a0a !important;
+    font-family: Raleway, Helvetica, Arial !important;
+}
+.variable-options input[type=checkbox] + label:before {
+    content: none;
+}
+
+.variable-options input[type=checkbox]:checked + label:before {
+    content: none;
+}
+*/
+
+/* Utility */
+.top-3 { margin-top: 3em; }
+.top-2 { margin-top: 2em; }
+.top-1 { margin-top: 1em; }
+.top-0 { margin-top: 0; padding-top: 0; }
+.bottom-3 { margin-bottom: 3em; }
+.bottom-2 { margin-bottom: 2em; }
+.bottom-1 { margin-bottom: 1em; }
+.top-3-bottom-0 { margin-top: 3em; margin-bottom: 0; }
+.bottom-minus-2 { margin-bottom: -2em; }
+
+@media screen and (max-width: 1110px) and (min-width: 769px){
+    #logo {
+        margin: 15px auto 0px auto !important;
+    }
+    #header > #header-core {
+        display: flex;
+        flex-direction: column;
+    }
+}
+/*
+.elementor-widget-tabs .elementor-tab-content {
+	display: inline !important;
+	visibility: hidden;
+}
+
+.elementor-widget-tabs .elementor-tab-content .elementor-clearfix .elementor-active {
+    visibility: visible !important;
+    display: inline;
+}
+*/
+
