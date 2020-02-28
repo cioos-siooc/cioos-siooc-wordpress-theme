@@ -116,4 +116,11 @@ function enqueue_css_styles(){
 
 add_action( 'wp_enqueue_scripts', 'enqueue_css_styles' );
 
+// TODO: this doesn't fix the root problem, which is that Elementor uses display:none which makes animation in-accessible to DOM. There is a plugin that uses visibility and opacity which should fix this in a second.
+function tabbing_enqueue(){
+   wp_register_script( 'tabbing', "/wp-content/tabbing.js");
+   wp_enqueue_script( 'tabbing');
+}
+add_action( 'wp_enqueue_scripts', 'tabbing_enqueue' );
+
 ?>
