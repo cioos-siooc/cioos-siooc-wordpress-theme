@@ -95,9 +95,6 @@ ul#menu-main-menu-en > li > ul.sub-menu {
 #mega-menu-wrap-pre_header_menu li.mega-menu-item img.mega-menu-logo {
     vertical-align: bottom;
 }
-#mega-menu-wrap-pre_header_menu #mega-menu-pre_header_menu li > a.mega-menu-link.mega-custom-icon:before {
-    margin-top: 8px !important;
-}
 
 /* Header */
 #header { margin: 3em 0; }
