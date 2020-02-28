@@ -108,4 +108,12 @@ function cioos_customize_copyright() {
 add_action( 'customize_register', 'cioos_customize_copyright_register');
 add_action( 'wp_head', 'cioos_customize_copyright' );
 
+// CIOOS Atlantic Regional Association functions.php code below this line
+
+function enqueue_css_styles(){
+   wp_enqueue_style( 'css-style', "https://fonts.googleapis.com/css?family=Montserrat:400,450,500,700,900|Quicksand:400,700&display=swap");
+}
+
+add_action( 'wp_enqueue_scripts', 'enqueue_css_styles' );
+
 ?>
