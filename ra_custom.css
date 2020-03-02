@@ -1,20 +1,12 @@
-/*
-Theme Name: CIOOS Atlantic 1.0
-Theme URL: http://cioosatlantic.ca/
-Description: CIOOS Atlantic Child Theme
-Author: CIOOS Atlantic
-Author URL: https://cioosatlantic.ca/
-Template: Experon_Pro
-Version: 1.0
-Text Domain: cioos atlantic
-*/
-
 @import url("./style.css");
 @import url("./ra_common.css");
 
-/*  Bottom copied from imported sheet, compared diff on original style.css in the root directory (one above)
-    TODO: remove this comment.
-    @import url("./cioos-siooc-wordpress-theme_1_1/style.css");
+/* CIOOS Atlantic Colours
+=====
+Primary: #e55162 // Dark: #7a3840;
+Secondary: #56dcbe
+Tertiary: #2fb8da
+=====
 */
 
 /* TODO: Add css to line up dropdown left justified with first letter of parent element. */
@@ -22,22 +14,14 @@ Text Domain: cioos atlantic
     padding: 50px 15px 5px 15px;
 }
 
-
-/* CIOOS Atlantic colours */
-/** Push menu onto new line **/
-/*#{$wrap} {
-	clear: both;
-}
-*/
-
 /*Background color for center of header */
 #pre-header {
-    background-color: #e55162;
+    background-color: #10171d;
 }
 
 /*Background color for outer edges of header */
 #wrap-safari {
-    background-color: #e55162;
+    background-color: #10171d;
 }
 
 /* Email field for MailChimp */
@@ -46,7 +30,7 @@ Text Domain: cioos atlantic
 }
 
 /*Text color for 'Email Address' in MailChimp email field */
-#mc_embed_signup .mc-field-group input::placeholder{
+#mc_embed_signup .mc-field-group input::placeholder {
     color: grey !important;
 }
 
@@ -77,12 +61,14 @@ ul#menu-main-menu-en > li > ul.sub-menu {
 }
 
 /* Override max mega menu colour */
-@media only screen and (min-width: 1px){
+@media only screen and (min-width: 1px) {
     #mega-menu-wrap-pre_header_menu {
         background: #e55162 !important;
     }
+    #mega-menu-wrap-pre_header_menu #mega-menu-pre_header_menu > li.mega-menu-item.mega-item-align-float-left.mega-hide-on-mobile {
+        float: none;
+    }
 }
-
 
 .themebutton, button, html input[type="button"], input[type="reset"], input[type="submit"], .themebutton2, .button.style2, .button.style3:hover, .button.style4:hover {
     -webkit-box-shadow: 0 0 0 4px rgba( 17, 81, 114, 0.2 ) !important;
@@ -97,47 +83,12 @@ ul#menu-main-menu-en > li > ul.sub-menu {
     color: #e55162 !important;
 }
 
-/* These are fixes when asset map CSS is thrown into the mix without any edits to integrate. */
-/*
-body {
-    padding: 0px !important;
-}
-
-a:focus, a:hover {
-    text-decoration: none !important;
-}
-
-#header .header-links > ul > li a, #header-sticky .header-links > ul > li a {
-    color: #0a0a0a !important;
-	font-family: Raleway, Helvetica, Arial !important;
-}
-.variable-options input[type=checkbox] + label:before {
-    content: none;
-}
-
-.variable-options input[type=checkbox]:checked + label:before {
-    content: none;
-}
-*/
-
-/*  copied from imported sheet
-    @import url("./cioos-siooc-wordpress-theme_1_1/style.css");
-*/
-
-/* CIOOS Atlantic Colours
-
-Primary: #e55162 // Dark: #7a3840;
-Secondary: #56dcbe
-Tertiary: #2fb8da
-
-*/
-
 /* Pre Header */
 #pre-header #mega-menu-wrap-pre_header_menu {
     background: none !important;
 }
 #pre-header {
-    background: url("https://dev.cioosatlantic.ca/wp-content/uploads/background-colour.jpg") repeat-x center;
+    background: url("https://cioosatlantic.ca/wp-content/uploads/background-colour.jpg") repeat-x center;
 }
 #mega-menu-wrap-pre_header_menu #mega-menu-pre_header_menu > li.mega-menu-item > a.mega-menu-link:hover,
 #mega-menu-wrap-pre_header_menu #mega-menu-pre_header_menu > li.mega-menu-item.mega-current-menu-item > a.mega-menu-link {
@@ -315,7 +266,7 @@ header #header .menu > li > a {
 /* Footer */
 footer {
     background-color: #10171d;
-    background: url("https://dev.cioosatlantic.ca/wp-content/uploads/background-colour.jpg") repeat;
+    background: url("https://cioosatlantic.ca/wp-content/uploads/background-colour.jpg") repeat;
 }
 footer #footer {
     background: none;
@@ -387,114 +338,6 @@ footer #footer #footer-core a {
     color: #e55162 !important;
     background: #fff !important;
 }
-
-/* TODO: Add css to line up dropdown left justified with first letter of parent element. */
-#header .header-links > ul > li a {
-    padding: 50px 15px 5px 15px;
-}
-
-
-/* CIOOS Atlantic colours */
-/** Push menu onto new line **/
-/*#{$wrap} {
-    clear: both;
-}
-*/
-
-/*Background color for center of header */
-
-#pre-header {
-    /*background-color: #e55162;*/
-    background-color: #10171d;
-}
-/*
-/*Background color for outer edges of header */
-
-#wrap-safari {
-    /*background-color: #e55162;*/
-    background-color: #10171d;
-}
-
-
-/* Email field for MailChimp */
-#footer-core input[type=email] {
-    background: white !important;
-}
-
-/*Text color for 'Email Address' in MailChimp email field */
-#mc_embed_signup .mc-field-group input::placeholder{
-    color: grey !important;
-}
-
-/* Fixes Latest News when no event found */
-.elementor-widget-wrap>.elementor-element {
-    height: auto;
-}
-
-/* Fixes custom form subscribe signup button */
-#mc_embed_signup #mc-embedded-subscribe.button {
-    background-color: white !important;
-    color: grey !important;
-}
-
-/* Aligns left margin on dropdown submenus. */
-ul.menu > li > ul.sub-menu {
-    padding-left: 0px !important;
-    margin-left: 15px !important
-}
-
-/* This hides the second caret from displaying under menus with dropdowns. */
-#header .menu > li > a span::after {
-    display: none;
-}
-/* Remove padding around span */
-#header .menu > li > a span {
-    padding: 0px !important;
-}
-
-/* Override max mega menu colour */
-@media only screen and (min-width: 1px){
-    #mega-menu-wrap-pre_header_menu {
-        background: #e55162 !important;
-    }
-}
-
-
-.themebutton, button, html input[type="button"], input[type="reset"], input[type="submit"], .themebutton2, .button.style2, .button.style3:hover, .button.style4:hover {
-    -webkit-box-shadow: 0 0 0 4px rgba( 17, 81, 114, 0.2 ) !important;
-    -moz-box-shadow: 0 0 0 4px rgba( 17, 81, 114, 0.2 ) !important;
-    -ms-box-shadow: 0 0 0 4px rgba( 17, 81, 114, 0.2 ) !important;
-    -o-box-shadow: 0 0 0 4px rgba( 17, 81, 114, 0.2 ) !important;
-    box-shadow: 0 0 0 4px rgba( 17, 81, 114, 0.2 ) !important;
-}
-
-/* Set menu span hover colour */
-#header .menu > li > a span:hover{
-    color: #e55162 !important;
-}
-
-/* These are fixes when asset map CSS is thrown into the mix without any edits to integrate. */
-/*
-body {
-    padding: 0px !important;
-}
-
-a:focus, a:hover {
-    text-decoration: none !important;
-}
-
-#header .header-links > ul > li a, #header-sticky .header-links > ul > li a {
-    color: #0a0a0a !important;
-    font-family: Raleway, Helvetica, Arial !important;
-}
-.variable-options input[type=checkbox] + label:before {
-    content: none;
-}
-
-.variable-options input[type=checkbox]:checked + label:before {
-    content: none;
-}
-*/
 
 /* Utility */
 .top-3 { margin-top: 3em; }
