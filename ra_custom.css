@@ -341,13 +341,19 @@ footer #footer #footer-core a {
     background: #fff !important;
 }
 
-
-
-/* Fixes custom form subscribe signup button */
-/*#mc_embed_signup #mc-embedded-subscribe.button {
-    background-color: white !important;
-    color: grey !important;
-}*/
+/* Home page partners tab */
+.jet-tabs__control-wrapper {
+    margin: 3em auto 0;
+}
+.jet-tabs__control-wrapper p {
+    font-size: 18px;
+    font-weight: 300;
+}
+.jet-tabs__control-wrapper .jet-tabs__control.active-tab .jet-tabs__label-text p,
+.jet-tabs__control-wrapper .jet-tabs__label-text:hover p {
+    color: #e55162;
+    transition: all 0.3s ease;
+}
 
 /* Utility */
 .top-3 { margin-top: 3em; }
@@ -369,15 +375,3 @@ footer #footer #footer-core a {
         flex-direction: column;
     }
 }
-/*
-.elementor-widget-tabs .elementor-tab-content {
-	display: inline !important;
-	visibility: hidden;
-}
-
-.elementor-widget-tabs .elementor-tab-content .elementor-clearfix .elementor-active {
-    visibility: visible !important;
-    display: inline;
-}
-*/
-
