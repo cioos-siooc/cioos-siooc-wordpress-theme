@@ -24,25 +24,9 @@ Tertiary: #2fb8da
     background-color: #10171d;
 }
 
-/* Email field for MailChimp */
-#footer-core input[type=email] {
-    background: white !important;
-}
-
-/*Text color for 'Email Address' in MailChimp email field */
-#mc_embed_signup .mc-field-group input::placeholder {
-    color: grey !important;
-}
-
 /* Fixes Latest News when no event found */
 .elementor-widget-wrap>.elementor-element {
     height: auto;
-}
-
-/* Fixes custom form subscribe signup button */
-#mc_embed_signup #mc-embedded-subscribe.button {
-    background-color: white !important;
-    color: grey !important;
 }
 
 /* Aligns left margin on dropdown submenus. */
@@ -306,38 +290,64 @@ footer #footer #footer-core a {
 
 /* MailChimp Subscribe Form */
 #mc_embed_signup,
-#footer input {
+#footer #mc_embed_signup input {
     font-family: "Montserrat", sans-serif;
     background: none;
 }
-#footer input {
+#footer #mc_embed_signup input {
     box-shadow: none !important;
-
+}
+#footer #mc_embed_signup .mc-input-fields {
+    display: flex;
+    justify-content: space-between;
+}
+#footer #mc_embed_signup .mc-field-group {
+    width: 47.5% !important;
+    margin-right: 0;
+}
+#footer #mc_embed_signup .mc-field-group .mc-required {
+    font-size: 1rem;
+    font-style: italic;
+    margin-left: 0.5rem;
+    color: #e55162;
+}
+#footer #mc_embed_signup input[type="text"],
+#footer #mc_embed_signup input[type="email"] {
+    background: #fff;
+    padding: 0.5em 1em !important;
+    border: none;
+    width: 100%;
+    color: #000;
 }
 #footer #mc_embed_signup .mc-field-group > label {
     color: #fff;
     font-weight: 700;
-    margin-right: 30px;
-}
-#footer #mc_embed_signup .mc-field-group input[type=email] {
-    border: none;
-    padding: 5px !important;
+    display: block;
 }
 #footer #mc_embed_signup #mc-embedded-subscribe.button {
     /*height: 36px !important;*/
     /*line-height: 36px !important;*/
-    height: 29px !important;
-    line-height: 29px !important;
+    height: auto !important;
+    line-height: 2rem !important;
     color: #fff !important;
     background: #e55162 !important;
     font-weight: 700;
     border: none !important;
     font-size: 14px !important;
+    margin: 0.75rem 0 0 0;
 }
 #footer #mc_embed_signup #mc-embedded-subscribe.button:hover {
     color: #e55162 !important;
     background: #fff !important;
 }
+
+
+
+/* Fixes custom form subscribe signup button */
+/*#mc_embed_signup #mc-embedded-subscribe.button {
+    background-color: white !important;
+    color: grey !important;
+}*/
 
 /* Utility */
 .top-3 { margin-top: 3em; }
