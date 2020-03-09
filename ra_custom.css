@@ -1,0 +1,377 @@
+@import url("./style.css");
+@import url("./ra_common.css");
+
+/* CIOOS Atlantic Colours
+=====
+Primary: #e55162 // Dark: #7a3840;
+Secondary: #56dcbe
+Tertiary: #2fb8da
+=====
+*/
+
+/* TODO: Add css to line up dropdown left justified with first letter of parent element. */
+#header .header-links > ul > li a {
+    padding: 50px 15px 5px 15px;
+}
+
+/*Background color for center of header */
+#pre-header {
+    background-color: #10171d;
+}
+
+/*Background color for outer edges of header */
+#wrap-safari {
+    background-color: #10171d;
+}
+
+/* Fixes Latest News when no event found */
+.elementor-widget-wrap>.elementor-element {
+    height: auto;
+}
+
+/* Aligns left margin on dropdown submenus. */
+ul#menu-main-menu-en > li > ul.sub-menu {
+    padding-left: 0px !important;
+    margin-left: 15px !important
+}
+
+/* This hides the second caret from displaying under menus with dropdowns. */
+#header .menu > li > a span::after {
+    display: none;
+}
+/* Remove padding around span */
+#header #menu-main-menu-en > li > a span {
+    padding: 0px;
+}
+
+/* Override max mega menu colour */
+@media only screen and (min-width: 1px) {
+    #mega-menu-wrap-pre_header_menu {
+        background: #e55162 !important;
+    }
+    #mega-menu-wrap-pre_header_menu #mega-menu-pre_header_menu > li.mega-menu-item.mega-item-align-float-left.mega-hide-on-mobile {
+        float: none;
+    }
+}
+
+.themebutton, button, html input[type="button"], input[type="reset"], input[type="submit"], .themebutton2, .button.style2, .button.style3:hover, .button.style4:hover {
+    -webkit-box-shadow: 0 0 0 4px rgba( 17, 81, 114, 0.2 ) !important;
+    -moz-box-shadow: 0 0 0 4px rgba( 17, 81, 114, 0.2 ) !important;
+    -ms-box-shadow: 0 0 0 4px rgba( 17, 81, 114, 0.2 ) !important;
+    -o-box-shadow: 0 0 0 4px rgba( 17, 81, 114, 0.2 ) !important;
+    box-shadow: 0 0 0 4px rgba( 17, 81, 114, 0.2 ) !important;
+}
+
+/* Set menu span hover colour */
+#header .menu > li > a span:hover{
+    color: #e55162 !important;
+}
+
+/* Pre Header */
+#pre-header #mega-menu-wrap-pre_header_menu {
+    background: none !important;
+}
+#pre-header {
+    background: url("https://cioosatlantic.ca/wp-content/uploads/background-colour.jpg") repeat-x center;
+}
+#mega-menu-wrap-pre_header_menu #mega-menu-pre_header_menu > li.mega-menu-item > a.mega-menu-link:hover,
+#mega-menu-wrap-pre_header_menu #mega-menu-pre_header_menu > li.mega-menu-item.mega-current-menu-item > a.mega-menu-link {
+    background: #10171d;
+    color: #e55162;
+}
+#mega-menu-wrap-pre_header_menu li.mega-menu-item img.mega-menu-logo {
+    vertical-align: bottom;
+}
+
+/* Header */
+#header { margin: 3em 0; }
+#header .header-links > ul > li a span {
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 15px;
+    color: #404041;
+}
+#header .header-links .sub-menu a {
+    font-size: 14px;
+    padding: 5px 10px;
+    font-family: 'Montserrat', sans-serif !important;
+}
+#header .header-links .menu li .sub-menu li:hover a {
+    color: #e55162 !important;
+}
+
+#header .menu > li.current-menu-item > a span {
+    font-weight: 400;
+    color: #e55162;
+}
+#header .menu > li.current-menu-item:hover > a span,
+#header .menu > li.current-menu-item > a span:hover {
+    color: #404041 !important;
+}
+
+/* Main Menu */
+header #header .menu > li > a {
+    margin-bottom: 10px;
+}
+
+/* Sidebar */
+#sidebar .bellows-nav li {
+    border-bottom: 1px solid #f0f0f2;
+}
+#sidebar .bellows-nav li:last-child {
+    border-bottom: none;
+}
+#sidebar .bellows-submenu {
+    background: #f0f0f2;
+}
+#sidebar .bellows-submenu a {
+    padding-left: 40px;
+    padding-bottom: 0;
+    padding-top: 20px;
+}
+#sidebar .bellows-submenu li:last-child a {
+    padding-bottom: 20px;
+}
+#sidebar .bellows-submenu li.bellows-current-menu-item {
+    font-weight: 700;
+}
+/* Scroll To Top */
+#scrollUp:after {
+    background: #2fb8da;
+    height: 30px;
+    width: 30px;
+    border-radius: 30px;
+    line-height: 30px;
+    font-size: 1em;
+}
+/* ***** ELEMENTOR ***** */
+
+/* Elementor Widgets */
+#content .elementor-widget-text-editor,
+#content .elementor-widget-image-box .elementor-image-box-content .elementor-image-box-description,
+#content .elementor-testimonial-details div {
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    color: #808081;
+    font-weight: 300;
+}
+#content .elementor-image-box-content .elementor-image-box-title {
+    font-family: "Montserrat", sans-serif;
+    font-size: 22px;
+    color: #404041;
+    font-weight: 300;
+}
+#content .elementor-testimonial-content {
+    font-family: "Montserrat", sans-serif;
+    color: #808081;
+    font-weight: 300;
+    letter-spacing: 0;
+    line-height: 1.5em;
+}
+#content .elementor-testimonial-details .elementor-testimonial-name {
+    font-weight: 700;
+    color: #404041;
+}
+#content .elementor-testimonial-details .elementor-testimonial-job {
+    font-size: 12px;
+    font-weight: 400;
+    color: #2fb8da;
+}
+
+/* Column - 50% */
+.elementor-col-50 {
+    width: 50% !important;
+}
+.elementor-element .elementor-row {
+    flex-direction: row !important;
+}
+
+/* Headings */
+#content h2.elementor-heading-title {
+    color: #404041;
+    font-size: 24px;
+    font-weight: 700;
+    font-family: "Montserrat", sans-serif;
+    letter-spacing: 0;
+}
+
+/* Carousel */
+.event-carousel-type1-head .mec-event-date-carousel {
+    background-color: #e55162;
+}
+.event-carousel-type1-head .mec-event-date-carousel::after {
+    border-color: #7a3840;
+}
+.mec-event-carousel-content .mec-event-carousel-title a {
+    font-size: 21px;
+    letter-spacing: 0;
+    font-weight: 300;
+}
+
+/* Sections */
+.light-content-box > div {
+    background: #f9fbfc !important;
+    border-color: #e55162 !important;
+}
+
+/* ***** HOME PAGE ***** */
+.asset-map-home {
+    margin-top: -5.5em;
+    margin-bottom: 5em;
+}
+.cioos-funding-info p {
+    font-size: 24px;
+    font-weight: 300;
+    font-family: "Montserrat", sans-serif;
+    line-height: 34px;
+    color: #808081;
+}
+.decorative-box,
+.decorative-box-with-text,
+.elementor-testimonial-content {
+    background: #f0f0f1;
+    padding: 2em;
+    border-radius: 5px;
+}
+.decorative-box p {
+    margin-bottom: 0;
+    padding: 1em;
+}
+.decorative-box-with-text p {
+    font-size: 21px;
+    line-height: 30px;
+    text-align: center;
+    padding: 1em;
+    margin-bottom: 0;
+}
+.elementor-testimonial-meta-inner {
+    margin-left: 2em;
+}
+
+/* Footer */
+footer {
+    background-color: #10171d;
+    background: url("https://cioosatlantic.ca/wp-content/uploads/background-colour.jpg") repeat;
+}
+footer #footer {
+    background: none;
+}
+footer #sub-footer {
+    background:none;
+    color: #fff;
+}
+footer #sub-footer .copyright a {
+    color: #e55162;
+    background: #fff;
+    border-radius: 5px;
+    padding: 4px 10px 6px;
+    margin-left: 10px;
+    font-weight: 700;
+}
+footer #sub-footer .copyright a:hover {
+    background: #e55162;
+    color: #fff;
+}
+footer #footer #footer-core {
+    font-family: "Montserrat", sans-serif;
+}
+footer #footer #footer-core h3 {
+    margin-bottom: 10px;
+}
+footer #footer #footer-core h3 span {
+    font-weight: 700;
+    font-size: 16px;
+}
+footer #footer #footer-core,
+footer #footer #footer-core p,
+footer #footer #footer-core a {
+    font-size: 14px;
+    color: #dddddf !important;
+}
+
+/* MailChimp Subscribe Form */
+#mc_embed_signup,
+#footer #mc_embed_signup input {
+    font-family: "Montserrat", sans-serif;
+    background: none;
+}
+#footer #mc_embed_signup input {
+    box-shadow: none !important;
+}
+#footer #mc_embed_signup .mc-input-fields {
+    display: flex;
+    justify-content: space-between;
+}
+#footer #mc_embed_signup .mc-field-group {
+    width: 47.5% !important;
+    margin-right: 0;
+}
+#footer #mc_embed_signup .mc-field-group .mc-required {
+    font-size: 1rem;
+    font-style: italic;
+    margin-left: 0.5rem;
+    color: #e55162;
+}
+#footer #mc_embed_signup input[type="text"],
+#footer #mc_embed_signup input[type="email"] {
+    background: #fff;
+    padding: 0.5em 1em !important;
+    border: none;
+    width: 100%;
+    color: #000;
+}
+#footer #mc_embed_signup .mc-field-group > label {
+    color: #fff;
+    font-weight: 700;
+    display: block;
+}
+#footer #mc_embed_signup #mc-embedded-subscribe.button {
+    /*height: 36px !important;*/
+    /*line-height: 36px !important;*/
+    height: auto !important;
+    line-height: 2rem !important;
+    color: #fff !important;
+    background: #e55162 !important;
+    font-weight: 700;
+    border: none !important;
+    font-size: 14px !important;
+    margin: 0.75rem 0 0 0;
+}
+#footer #mc_embed_signup #mc-embedded-subscribe.button:hover {
+    color: #e55162 !important;
+    background: #fff !important;
+}
+
+/* Home page partners tab */
+.jet-tabs__control-wrapper {
+    margin: 3em auto 0;
+}
+.jet-tabs__control-wrapper p {
+    font-size: 18px;
+    font-weight: 300;
+}
+.jet-tabs__control-wrapper .jet-tabs__control.active-tab .jet-tabs__label-text p,
+.jet-tabs__control-wrapper .jet-tabs__label-text:hover p {
+    color: #e55162;
+    transition: all 0.3s ease;
+}
+
+/* Utility */
+.top-3 { margin-top: 3em; }
+.top-2 { margin-top: 2em; }
+.top-1 { margin-top: 1em; }
+.top-0 { margin-top: 0; padding-top: 0; }
+.bottom-3 { margin-bottom: 3em; }
+.bottom-2 { margin-bottom: 2em; }
+.bottom-1 { margin-bottom: 1em; }
+.top-3-bottom-0 { margin-top: 3em; margin-bottom: 0; }
+.bottom-minus-2 { margin-bottom: -2em; }
+
+@media screen and (max-width: 1110px) and (min-width: 769px){
+    #logo {
+        margin: 15px auto 0px auto !important;
+    }
+    #header > #header-core {
+        display: flex;
+        flex-direction: column;
+    }
+}
