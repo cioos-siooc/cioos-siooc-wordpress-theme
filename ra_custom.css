@@ -229,3 +229,7 @@ a.elementor-button-link {
 #mega-menu-wrap-pre_header_menu li.mega-menu-item img.mega-menu-logo {
     vertical-align: bottom !important;
 }
+
+#pre-header-social a:hover {
+    background: none!important;
+}
