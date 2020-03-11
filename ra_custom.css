@@ -233,3 +233,30 @@ a.elementor-button-link {
 #pre-header-social a:hover {
     background: none!important;
 }
+
+.nationallogo{
+    padding:     9px 0px 0px 0px;
+    display: block;
+}
+#menu-social-networks-menu,
+a.nationallink{
+    display: block;
+    float:right;
+}
+#pre-header-links-inner, #pre-header-social {
+    width: 120px;
+}
+#pre-header .header-links i {
+    color: #FFF;
+}
+#pre-header .header-links li a{
+    color: #FFF;
+}
+
+#pre-header .header-links a:hover i,
+#pre-header .header-links a:focus i,
+#pre-header .header-links > ul > li > a:hover,
+#pre-header .header-links > ul > li > a:focus
+{
+    color: #ffc857;
+}
