@@ -72,7 +72,7 @@ ul#menu-main-menu-en > li > ul.sub-menu {
     background: none !important;
 }
 #pre-header {
-    background: url("https://cioosatlantic.ca/wp-content/uploads/background-colour.jpg") repeat-x center;
+    background: url("https://dev.cioosatlantic.ca/wp-content/uploads/background-colour.jpg") repeat-x center;
 }
 #mega-menu-wrap-pre_header_menu #mega-menu-pre_header_menu > li.mega-menu-item > a.mega-menu-link:hover,
 #mega-menu-wrap-pre_header_menu #mega-menu-pre_header_menu > li.mega-menu-item.mega-current-menu-item > a.mega-menu-link {
@@ -250,7 +250,7 @@ header #header .menu > li > a {
 /* Footer */
 footer {
     background-color: #10171d;
-    background: url("https://cioosatlantic.ca/wp-content/uploads/background-colour.jpg") repeat;
+    background: url("https://dev.cioosatlantic.ca/wp-content/uploads/background-colour.jpg") repeat;
 }
 footer #footer {
     background: none;
@@ -340,6 +340,12 @@ footer #footer #footer-core a {
     color: #e55162 !important;
     background: #fff !important;
 }
+
+/* Fixes custom form subscribe signup button */
+/*#mc_embed_signup #mc-embedded-subscribe.button {
+    background-color: white !important;
+    color: grey !important;
+}*/
 
 /* Home page partners tab */
 .jet-tabs__control-wrapper {
