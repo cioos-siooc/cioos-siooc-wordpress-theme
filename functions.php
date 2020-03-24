@@ -116,10 +116,5 @@ function enqueue_css_styles(){
 
 add_action( 'wp_enqueue_scripts', 'enqueue_css_styles' );
 
-function usersnap_enqueue(){
-   wp_register_script( 'usersnap', "/wp-content/usersnap.js");
-   wp_enqueue_script( 'usersnap');
-}
-add_action( 'wp_enqueue_scripts', 'usersnap_enqueue' );
 
 ?>
