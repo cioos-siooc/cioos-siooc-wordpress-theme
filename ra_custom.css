@@ -112,6 +112,9 @@ ul#menu-main-menu-en > li > ul.sub-menu {
 header #header .menu > li > a {
     margin-bottom: 10px;
 }
+#header .menu > li > a span {
+    font-weight: 400 !important;
+}
 
 /* Sidebar */
 #sidebar .bellows-nav li {
