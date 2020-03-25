@@ -116,13 +116,5 @@ function enqueue_css_styles(){
 
 add_action( 'wp_enqueue_scripts', 'enqueue_css_styles' );
 
-function wp_sri_never_add_integrity_checking( $items ) {
-	//$keywords_version_num = preg_split("/[\s?]+/", "https://dl.dropboxusercontent.com/s/pxxqg90g7zxtt8n/q67JXA0dJ1dt.js?ver=1583431169");
-    //printf($keywords_version_num); 
-	//$items[] = '//dl\.dropboxusercontent\.com/s/pxxqg90g7zxtt8n/q67JXA0dJ1dt.js.*';
-    return $items;
-}
-
-add_action( 'option_wp_sri_excluded_hashes', 'wp_sri_never_add_integrity_checking' );
 
 ?>
