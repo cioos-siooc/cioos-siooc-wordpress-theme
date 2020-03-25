@@ -30,7 +30,7 @@ Tertiary: #2fb8da
     display: none;
 }
 /* Remove padding around span */
-#header #menu-main-menu-en > li > a span {
+#header .menu > li > a span {
     padding: 0px;
 }
 
