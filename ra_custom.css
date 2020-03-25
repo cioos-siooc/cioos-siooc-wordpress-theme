@@ -9,10 +9,6 @@ Tertiary: #2fb8da
 =====
 */
 
-/* TODO: Add css to line up dropdown left justified with first letter of parent element. */
-#header .header-links > ul > li a {
-    padding: 50px 15px 5px 15px;
-}
 
 /*Background color for center of header */
 #pre-header {
@@ -27,12 +23,6 @@ Tertiary: #2fb8da
 /* Fixes Latest News when no event found */
 .elementor-widget-wrap>.elementor-element {
     height: auto;
-}
-
-/* Aligns left margin on dropdown submenus. */
-ul#menu-main-menu-en > li > ul.sub-menu {
-    padding-left: 0px !important;
-    margin-left: 15px !important
 }
 
 /* This hides the second caret from displaying under menus with dropdowns. */
@@ -114,6 +104,20 @@ header #header .menu > li > a {
 }
 #header .menu > li > a span {
     font-weight: 400 !important;
+}
+#header .header-links > ul > li {
+    margin-left: 20px;
+}
+#header .header-links > ul > li:first-child {
+    margin-left: 0;
+}
+
+#header .header-links > ul > li a {
+    padding: 50px 0 5px 0;
+}
+#header .header-links > ul > li .sub-menu {
+    padding-left: 0px !important;
+    margin-left: 0px !important;
 }
 
 /* Sidebar */
