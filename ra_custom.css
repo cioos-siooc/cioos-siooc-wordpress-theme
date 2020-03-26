@@ -29,10 +29,6 @@ Tertiary: #2fb8da
 #header .menu > li > a span::after {
     display: none;
 }
-/* Remove padding around span */
-#header .menu > li > a span {
-    padding: 0px;
-}
 
 /* Override max mega menu colour */
 @media only screen and (min-width: 1px) {
@@ -104,6 +100,7 @@ header #header .menu > li > a {
 }
 #header .menu > li > a span {
     font-weight: 400 !important;
+    padding: 0px;
 }
 #header .header-links > ul > li {
     margin-left: 20px;
