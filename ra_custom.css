@@ -359,6 +359,54 @@ footer #footer #footer-core a {
     transition: all 0.3s ease;
 }
 
+/* Site wide notification */
+.elementor-popup-modal {
+	background-color:transparent;
+    z-index: 100000;
+    position: absolute;
+	overflow: hidden;
+    top: 45px;
+}
+/* if logged in && admin bar */
+.logged-in.admin-bar .elementor-popup-modal {
+	top: 77px;
+}
+/* push down header (will cause problems if lightbox is used for anything else, need specific class for alerts) */
+.dialog-lightbox-body.dialog-container.dialog-lightbox-container #header {
+	margin: 8.5em 0 3em;
+}
+.elementor-popup-modal .elementor-section.elementor-section-boxed {
+	padding: 0;
+	background-color: #f4f4f4;
+}
+.elementor-popup-modal .elementor-section .announcement-modal .elementor-element-populated {
+	padding: 14px 0 15px;
+}
+.elementor-popup-modal .elementor-section .elementor-element .elementor-heading-title {
+	color: #808081;
+}
+.elementor-popup-modal .announcement-modal {
+	font-size: 14px;
+	text-align: center;
+	font-weight: 700;
+}
+.elementor-popup-modal .announcement-modal span {
+	display: block;
+	color: #404041;
+	text-transform: uppercase;
+	font-weight: 700;
+}
+.elementor-popup-modal .announcement-modal a {
+	text-decoration: underline;
+}
+.elementor-popup-modal .dialog-widget-content .dialog-close-button {
+	display:none;
+}
+@media screen and (max-width: 767px) {
+	.elementor-popup-modal {
+		/* TODO - figure this out */
+	}
+}
 /* Utility */
 .top-3 { margin-top: 3em; }
 .top-2 { margin-top: 2em; }
