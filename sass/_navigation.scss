@@ -1,0 +1,119 @@
+/* Navigation
+--------------------------------------------- */
+.menu-en-container,
+.menu-fr-container,
+.main-navigation {
+	display: block;
+	width: 100%;
+}
+ul.sitelanguages,
+ul.nav-menu,
+.menu > ul {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: flex-end;
+	align-items: center;
+	align-content: center;
+	list-style-type: none;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	li {
+		list-style-type: none;
+		list-style: none;
+		position: relative;
+		margin: 0;
+		padding: 0;
+		a {
+			margin: 0;
+			padding: 0;
+			color: $color_body_text;
+			display: inline-block;
+			text-decoration: none;
+			border-bottom: 3px solid $color_transparent;
+			transition: color 200ms linear, border 200ms linear;
+		}
+		a:hover {
+			border-bottom: 3px solid $color_1;
+		}
+		// Secondary menu
+		ul {
+			height: unset;
+			display: block;
+			position: absolute;
+			left: -999em;
+			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+			background:$color_body_bg;
+			z-index: 100;
+			min-width: 200px;
+			border-top: 3px solid $color_2;  //fancy border on flyouts
+			opacity: 0;
+			transition: opacity 200ms linear;
+			margin: 0;
+			padding: 0;
+			a {
+				font-weight: normal;
+				border-bottom: 0px solid $color_1;
+			}
+			a:hover {
+				border-bottom: 0px solid $color_1;
+			}
+		}
+	}
+
+	// if last has children - pin subnav right
+	li:last-child.menu-item-has-children .sub-menu {
+		right: unset;
+	}
+	li:last-child.menu-item-has-children:hover .sub-menu {
+		right: 0;
+		@media screen and (max-width: $mobile_trigger) {
+			right: unset;
+		}
+	}
+
+	li:hover > ul,
+	li.focus > ul {
+		left: auto;
+		opacity: 1;
+	}
+
+	li:hover > a,
+	li.focus > a,
+	.current_page_ancestor > a,
+	.current-menu-item > a {
+		color: $color_nav_highlight;
+	}
+
+	.page_item_has_children > a,
+	.menu-item-has-children > a {
+		&::after {
+			content: "\f347";
+			font-family: dashicons;
+			display: inline;
+			position: relative;
+			vertical-align: baseline;
+			line-height: 0;
+		}
+	}
+}
+
+/* Mobile menu. */
+.menu-toggle {
+	display: none;
+}
+
+@media screen and (max-width: $mobile_trigger) {
+	.main-navigation.toggled ul,
+	.menu-toggle {
+		display: block;
+	}
+
+	.main-navigation ul,
+	ul.sitelanguages {
+		display: none;
+	}
+}
+
+

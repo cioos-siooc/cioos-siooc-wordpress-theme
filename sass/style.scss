@@ -1,0 +1,237 @@
+/*--------------------------------------------------------
+>>> TABLE OF CONTENTS:
+-----------------------------------------------------------
+# instructions
+# includes
+# continer
+# header
+# main
+# footer
+--------------------------------------------------------*/
+
+
+/*--------------------------------------------------------
+# instructions
+----------------------------------------------------------
+This system works by creating rows, spanning the view port,
+and in each row a container is inserted to hold content.
+
+<div class=row1>
+    <div class=container> 
+    ------------
+    your content
+    ------------
+    </div>
+</div>  
+
+<div class=row2>
+    <div class=container> 
+    ------------
+    your content
+    ------------
+    </div>
+</div>    
+
+----------------------------------------------------------
+ row 1          -------------------------
+                |    container div      |
+                -------------------------
+----------------------------------------------------------
+
+----------------------------------------------------------
+ row 2          -------------------------
+                |    container div      |
+                -------------------------
+----------------------------------------------------------
+
+----------------------------------------------------------
+ row 3 ... etc
+                -------------------------
+                |    container div      |
+                -------------------------
+----------------------------------------------------------*/
+
+
+/*--------------------------------------------------------
+# Includes
+--------------------------------------------------------*/
+
+//WIDTHS
+$max_width: 1140px; //Old size
+//$max_width: 1080px; // new size
+$mobile_trigger: 800px; // when to flip to compressed fluid view
+
+//FONTS
+$font_family: "Montserrat", apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell,
+    "Helvetica Neue", sans-serif;
+$font_size: 1rem;
+$line_height: 1.15;
+$mono_font: monaco, consolas, "Andale Mono", "DejaVu Sans Mono", "Courier 10 Pitch", courier, monospace;
+
+// RA SPECIFIC COLOURS - SEE CIOOS Brand Guidelines
+// these are used where approprite around the site in
+// links and navigation colours, rollovers and more
+
+// National
+// $color_1: rgba(181, 181, 181, 1);
+// $color_2: rgba(82, 167, 155, 1);
+// $color_3: rgba(250, 114, 104, 1);
+// $color_4: rgba(255, 255, 255, 1);
+// $color_5: rgba(198, 227, 223, 1);
+
+// Pacific
+$color_1: rgba(185, 214, 242, 1);
+$color_2: rgba(0, 116, 144, 1);
+$color_3: rgba(255, 200, 87, 1);
+$color_4: rgba(255, 107, 53, 1);
+$color_5: rgba(135, 142, 136, 1);
+
+// OTHER COLOURS
+$color_body_bg: rgba(255, 255, 255, 1);
+$color_transparent: rgba(255, 255, 255, 0);
+$color_body_text: rgba(0, 0, 0, 1);
+$color_light_gray: rgba(129, 129, 129, 1);
+$color_dark_gray: rgba(64, 64, 64, 1);
+$color_nav_highlight: $color_3;
+$color_pre_nav: $color_2;
+
+$color_footer_bg: rgb(23, 33, 43);
+
+// COMPONENTS
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap");
+@import "normalize"; // a 'reset'
+@import "buildup"; // a generic elements like forms and divs
+@import "wordpress"; // wordpress specific stuff like wp_galleries
+@import "navigation"; // The navigation system
+@import "accessibility"; // Accessibility helpers
+
+
+/*----------------------------------------------------------
+# container
+----------------------------------------------------------*/
+
+.container {
+    max-width: $max_width;
+    margin: 0 auto;
+    padding: 0 1em; // allows the content some room at small screens
+}
+
+
+/*----------------------------------------------------------
+# header
+----------------------------------------------------------*/
+
+.page-header {
+    .post-nav,
+    .pre-nav {
+        font-family: $font_family;
+        font-weight: 600;
+        font-size: 0.8rem;
+    }
+    background: $color_body_bg;
+    .pre-nav {
+        background: $color_2;
+        max-height: 3rem;
+        @media screen and (max-width: $mobile_trigger) {
+            margin: 0 0 5px;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: 90px max-content;
+            grid-template-rows: auto;
+            grid-column-gap: 1em;
+            height: 3em; //three lines tall.
+            width: max-content;
+
+            .nationallogo {
+                grid-area: 1 / 1 / 1 / 2;
+                overflow: hidden;
+            }
+            .logotype {
+                grid-area: 1 / 2 / 1 / 3;
+                display: flex;
+                a {
+                    padding: 0.8em; //three lines tall.
+                    align-self: center;
+                    color: $color_body_bg;
+                    display: inline-block;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+    .post-nav {
+        padding: 2em 0;
+        .container {
+            //https://cssgrid-generator.netlify.app/
+            display: grid;
+            grid-template-columns: 344px auto min-content;
+            grid-template-rows: auto;
+            grid-column-gap: 1em;
+            @media screen and (max-width: $mobile_trigger) {
+                display: flex;
+                flex-direction: column;
+                flex-wrap: nowrap;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+        .sitelogo {
+            grid-area: 1 / 1 / 1 / 2;
+            width: 344px;
+            @media screen and (max-width: $mobile_trigger) {
+                width: 80vw;
+            }
+        }
+        .main-nav {
+            grid-area: 1 / 2 / 1 / 3;
+            text-transform: uppercase;
+            li a {
+                padding: 2em 0.5em 0.5em 0.5em;
+            }
+            .sub-menu li a {
+                padding: 0.5em 0.5em 1em 0.5em;
+            }
+        }
+        .language-nav {
+            grid-area: 1 / 3 / 1 / 4;
+            text-transform: uppercase;
+            li a {
+                padding: 2.6em 0.6em 0.8em 0.6em; //smaller text needs to be pushed down further
+                font-size: 0.8em;
+                color: $color_light_gray;
+            }
+        }
+        .menu-toggle {
+            width: 100%;
+        }
+    }
+}
+/*----------------------------------------------------------
+# main
+----------------------------------------------------------*/
+.site-main {
+    overflow: hidden;
+    background-color: $color_body_bg;
+    margin: 0;
+    .container {
+        display: flex;
+    }
+}
+/*----------------------------------------------------------
+# footer
+----------------------------------------------------------*/
+.site-footer {
+    background: $color_footer_bg;
+    .container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: auto;
+        grid-column-gap: 5em;
+        article{width:100%}
+        aside{width:10%}
+    }
+}
+.elementor-section-wrap > section{
+    margin-bottom: 2.5em;
+}

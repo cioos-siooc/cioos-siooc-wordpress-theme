@@ -1,111 +1,221 @@
 <?php
-function enqueue_parent_styles() {
-   wp_enqueue_style( 'parent-style', get_template_directory_uri().'/style.css' );
-}
+/**
+ * cioos functions and definitions
+ *
+ * @link https://developer.wordpress.org/themes/basics/theme-functions/
+ *
+ * @package cioos
+ */
 
-function register_logo_config_for_locale( $wp_customize, $locale ) {
-   $setting_id = 'logo_'.$locale;
-   $control_id = 'cioos_logo_'.$locale;
+if ( ! function_exists( 'cioos_setup' ) ) :
+	/**
+	 * Sets up theme defaults and registers support for various WordPress features.
+	 *
+	 * Note that this function is hooked into the after_setup_theme hook, which
+	 * runs before the init hook. The init hook is too late for some features, such
+	 * as indicating support for post thumbnails.
+	 */
+	function cioos_setup() {
+		/*
+		 * Make theme available for translation.
+		 * Translations can be filed in the /languagcurrent_page_itemes/ directory.
+		 * If you're building a theme based on cioos, use a find and replace
+		 * to change 'cioos' to the name of your theme in all the template files.
+		 */
+		load_theme_textdomain( 'cioos', get_template_directory() . '/languages' ); 
+		//not sure how this syncs with polylang.
 
-   $wp_customize->add_setting( $setting_id );
-   $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, $control_id, array(
-      'label' => __( 'Logo ', 'CIOOS').$locale,
-      'section' => 'title_tagline',
-      'settings' => $setting_id,
-   ) ) );
-}
+		// Add default posts and comments RSS feed links to head.
+		add_theme_support( 'automatic-feed-links' );
 
-function cioos_customize_register($wp_customize) {
-   $locales = [
-      'en_CA',
-      'fr_CA'
-   ];
-   foreach ( $locales as $locale) {
-      register_logo_config_for_locale($wp_customize, $locale);
-   }
-}
+		/*
+		 * Let WordPress manage the document title.
+		 * By adding theme support, we declare that this theme does not use a
+		 * hard-coded <title> tag in the document head, and expect WordPress to
+		 * provide it for us.
+		 */
+		add_theme_support( 'title-tag' );
 
-function cioos_customize_logo() {
-   global $thinkup_general_logolink;
+		/*
+		 * Enable support for Post Thumbnails on posts and pages.
+		 *
+		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
+		 */
+		add_theme_support( 'post-thumbnails' );
 
-   if (function_exists('pll_current_language')) {
-      $locale = pll_current_language('locale');
-      $setting_id = 'logo_' . $locale;
-      if ( get_theme_mod( $setting_id ) ) {
-         $thinkup_general_logolink = get_theme_mod( $setting_id );
-      } else {
-         if ( get_theme_mod('custom_logo') ) {
-            $thinkup_general_logolink = wp_get_attachment_image_src(get_theme_mod('custom_logo'), 'full')[0];
-         } else {
-            $thinkup_general_logolink = get_theme_mod( 'logo_en_CA' );
-         }
-      }
-   }
-}
+		// This theme uses wp_nav_menu() in one location.
+		register_nav_menus(
+			array(
+				'menu-1' => esc_html__( 'main menu', 'cioos' )
+			)
+		);
+
+		/*
+		 * Switch default core markup for search form, comment form, and comments
+		 * to output valid HTML5.
+		 */
+		
+		add_theme_support(
+			'html5',
+			array(
+				'search-form',
+				// 'comment-form',
+				// 'comment-list',
+				'gallery',
+				'caption',
+				'style',
+				'script',
+			)
+		);
+
+		// Set up the WordPress core custom background feature.
+		// add_theme_support(
+		// 	'custom-background',
+		// 	apply_filters(
+		// 		'cioos_custom_background_args',
+		// 		array(
+		// 			'default-color' => 'ffffff',
+		// 			'default-image' => '',
+		// 		)
+		// 	)
+		// );
+
+		/**
+		 * Add support for core custom logo.
+		 *
+		 * @link https://codex.wordpress.org/Theme_Logo
+		 */
+		add_theme_support(
+			'custom-logo',
+			array(
+				'height'      => 250,
+				'width'       => 250,
+				'flex-width'  => true,
+				'flex-height' => true,
+			)
+		);
+		
+	}
+endif;
+add_action( 'after_setup_theme', 'cioos_setup' );
 
 /**
- * Checks for the existance of a stylesheet named ra_custom.css, if found it 
- * loads it with a lower priority than the parent and theme styles to be sure 
- * and be last in the styling order to avoid being overridden.
+ * Set the content width in pixels, based on the theme's design and stylesheet.
+ *
+ * Priority 0 to make it available to lower priority callbacks.
+ *
+ * @global int $content_width
  */
-function cioos_custom_stylesheet() {
-   # custom CSS url for browser
-   $custom_css_url = get_stylesheet_directory_uri() . '/ra_custom.css';
-   
-   # used to check for existance of custom file
-   $custom_css_path = get_stylesheet_directory() . '/ra_custom.css';
-   if (file_exists($custom_css_path)) {
-      wp_enqueue_style( 'ra-custom-style', $custom_css_url, array('parent-style'));
-   }
+function cioos_content_width() {
+	$GLOBALS['content_width'] = apply_filters( 'cioos_content_width', 1080 );
+}
+add_action( 'after_setup_theme', 'cioos_content_width', 0 );
+
+/**
+ * Register widget area.
+ *
+ * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
+ */
+function cioos_widgets_init() {
+
+	register_sidebar(array(
+		'name'          => esc_html__( 'Sidebar 1', 'sidebar-nav' ),
+		'id'            => 'sidebar-nav',
+		'description'   => esc_html__( 'Add widgets here.', 'cioos-widget-description-1' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	));
+
+	register_sidebar(array(
+		'name'          => esc_html__(  'Pre-nav top bar', 'cioos' ),
+		'id'            => 'sidebar-logotype',
+		'description'   => esc_html__( 'Add widgets here.', 'cioos' ),
+		'before_widget' => '',
+		'after_widget'  => '',
+		'before_title'  => '',
+		'after_title'   => '', 
+	));
+
+	register_sidebar(array(
+		'name'          => esc_html__(  'Footer area 1', 'cioos' ),
+		'id'            => 'sidebar-footer-1',
+		'description'   => esc_html__( 'Add widgets here.', 'cioos' ),
+		'before_widget' => '',
+		'after_widget'  => '',
+		'before_title'  => '',
+		'after_title'   => '', 
+	));
+	register_sidebar(array(
+		'name'          => esc_html__(  'Footer area 2', 'cioos' ),
+		'id'            => 'sidebar-footer-2',
+		'description'   => esc_html__( 'Add widgets here.', 'cioos' ),
+		'before_widget' => '',
+		'after_widget'  => '',
+		'before_title'  => '',
+		'after_title'   => '', 
+	));
+	register_sidebar(array(
+		'name'          => esc_html__(  'Footer area 3', 'cioos' ),
+		'id'            => 'sidebar-footer-3',
+		'description'   => esc_html__( 'Add widgets here.', 'cioos' ),
+		'before_widget' => '',
+		'after_widget'  => '',
+		'before_title'  => '',
+		'after_title'   => '', 
+	));
+	register_sidebar(array(
+		'name'          => esc_html__(  'Footer area 4', 'cioos' ),
+		'id'            => 'sidebar-footer-4',
+		'description'   => esc_html__( 'Add widgets here.', 'cioos' ),
+		'before_widget' => '',
+		'after_widget'  => '',
+		'before_title'  => '',
+		'after_title'   => '', 
+	));
+	
+}
+add_action( 'widgets_init', 'cioos_widgets_init' );
+/**
+ * Enqueue scripts and styles.
+ */
+function cioos_scripts() {
+	wp_enqueue_style( 'cioos-style', get_stylesheet_uri(), array(),  );
+	wp_style_add_data( 'cioos-style', 'rtl', 'replace' );
+	wp_enqueue_style('dashicons');
+	wp_enqueue_script( 'cioos-navigation', get_template_directory_uri() . '/js/navigation.js', array(),  true );
+
+	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+		wp_enqueue_script( 'comment-reply' );
+	}
+}
+add_action( 'wp_enqueue_scripts', 'cioos_scripts' );
+
+/**
+ * Implement the Custom Header feature.
+ */
+require get_template_directory() . '/inc/custom-header.php';
+
+/**
+ * Custom template tags for this theme.
+ */
+require get_template_directory() . '/inc/template-tags.php';
+
+/**
+ * Functions which enhance the theme by hooking into WordPress.
+ */
+require get_template_directory() . '/inc/template-functions.php';
+
+/**
+ * Customizer additions.
+ */
+require get_template_directory() . '/inc/customizer.php';
+
+/**
+ * Load Jetpack compatibility file.
+ */
+if ( defined( 'JETPACK__VERSION' ) ) {
+	require get_template_directory() . '/inc/jetpack.php';
 }
 
-add_action( 'wp_enqueue_scripts', 'enqueue_parent_styles' );
-add_action( 'wp_enqueue_scripts', 'cioos_custom_stylesheet', 50000);
-add_action( 'customize_register', 'cioos_customize_register');
-add_action( 'wp_head', 'cioos_customize_logo' );
-
-function register_copyright_config_for_locale( $wp_customize, $locale ) {
-   $setting_id = 'wrt_copyright_'.$locale;
-   $control_id = 'cioos_wrt_copyright_'.$locale;
-
-   $wp_customize->add_setting( $setting_id );
-   $wp_customize->add_control( $control_id, array(
-       'label'   => __( 'Copyright Text ', 'CIOOS').$locale,
-       'type'    => 'text',
-       'section' => 'title_tagline',
-       'settings' => $setting_id,
-   ) );
-}
-
-function cioos_customize_copyright_register($wp_customize) {
-   $locales = [
-       'en_CA',
-       'fr_CA'
-   ];
-   foreach ( $locales as $locale) {
-      register_copyright_config_for_locale($wp_customize, $locale);
-   }
-}
-
-function cioos_customize_copyright() {
-   global $thinkup_footer_copyright;
-
-   if (function_exists('pll_current_language')) {
-      $locale = pll_current_language('locale');
-      $setting_id = 'wrt_copyright_' . $locale;
-      if ( get_theme_mod( $setting_id ) ) {
-         $thinkup_footer_copyright = get_theme_mod( $setting_id );
-      } else {
-         if ( get_theme_mod('wrt_copyright') ) {
-            $thinkup_footer_copyright = get_theme_mod('wrt_copyright');
-         } else {
-            $thinkup_footer_copyright = get_theme_mod( 'wrt_copyright_en_CA' );
-         }
-      }
-   }
-}
-
-add_action( 'customize_register', 'cioos_customize_copyright_register');
-add_action( 'wp_head', 'cioos_customize_copyright' );
-
-?>

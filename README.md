@@ -1,19 +1,36 @@
-# cioos-siooc-wordpress-theme
-Wordpress theme for the CIOOS-SIOOC website
+CIOOS
+===
 
-Dependencie(s)
-------------------
-- .wpress file provided before
-- Experon PRO theme
+Note: `.no-sidebar` styles are automatically loaded.
+
 
 Installation
-------------
-Same installation process as any theme on WordPress. You need to go in **Appearance** -> **Themes** -> **Add New** -> **Upload Theme** and upload the .zip file. After that, activate it.
+---------------
 
-Alternatively the contents of the archive can be placed directly in the wp-content/themes folder on your webhost.
+### Requirements
 
-### **Note**
-The .wpress file is not necessary but is a must have. You could install Experon Pro + CIOOS theme and do all the configurations by yourself but if you have the .wpress file and you import it first, all the configurations will already be there so it's faster than doing it all by hand.
+`CIOOS` requires the following dependencies:
 
-### **Warning**
-You may encounter some interface bugs at the menu level and the suddenly non-existing pre-header for example. We are still investigating on why it's happening but there's an easy way to get around this. You need to go in **Appearance** -> **Menus** -> **Manage Locations** and put back the right menus with the right locations.
+- [Node.js](https://nodejs.org/)
+- [Composer](https://getcomposer.org/)
+
+### Setup
+
+To start using all the tools that come with `CIOOS`  you need to install the necessary Node.js and Composer dependencies :
+
+```sh
+$ composer install
+$ npm install
+```
+
+### Available CLI commands
+
+- `composer lint:wpcs` : checks all PHP files against [PHP Coding Standards](https://developer.wordpress.org/coding-standards/wordpress-coding-standards/php/).
+- `composer lint:php` : checks all PHP files for syntax errors.
+- `composer make-pot` : generates a .pot file in the `languages/` directory.
+- `npm run compile:css` : compiles SASS files to css.
+- `npm run compile:rtl` : generates an RTL stylesheet.
+- `npm run watch` : watches all SASS files and recompiles them to css when they change.
+- `npm run lint:scss` : checks all SASS files against [CSS Coding Standards](https://developer.wordpress.org/coding-standards/wordpress-coding-standards/css/).
+- `npm run lint:js` : checks all JavaScript files against [JavaScript Coding Standards](https://developer.wordpress.org/coding-standards/wordpress-coding-standards/javascript/).
+- `npm run bundle` : generates a .zip archive for distribution, excluding development and system files.
